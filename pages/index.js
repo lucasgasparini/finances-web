@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
     const [expenseValue, setExpenseValue] = useState('')
@@ -24,6 +24,11 @@ export default function Home() {
             <Head>
                 <title>Finances</title>
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
 
             <main className={styles.main}>
@@ -33,7 +38,7 @@ export default function Home() {
                     className={styles.input}
                     placeholder="$$$$"
                     value={expenseValue}
-					type="number"
+                    type="number"
                     onChange={(e) => setExpenseValue(e.target.value)}
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
